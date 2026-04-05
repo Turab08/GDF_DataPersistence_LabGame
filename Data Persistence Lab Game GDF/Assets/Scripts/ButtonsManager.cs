@@ -10,4 +10,14 @@ public class ButtonsManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Settings()
+    {
+        UIManager.Instance.Settings();
+    }
+    
+    public void Resume()
+    {
+        UIManager.Instance.Resume();
+    }
 }
