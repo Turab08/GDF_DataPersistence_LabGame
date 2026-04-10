@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,11 +21,13 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        volume = PlayerPrefs.GetFloat("Volume", volumeSlider.value);
-        
-        volumeSlider.value = volume;
-        music.volume = volume;
-        sfx.volume = volume;
+        if (volumeSlider != null) {
+            volume = PlayerPrefs.GetFloat("Volume", volumeSlider.value);
+            
+            volumeSlider.value = volume;
+            music.volume = volume;
+            sfx.volume = volume;
+        }
     }
 
     public void ChangeVolume()
